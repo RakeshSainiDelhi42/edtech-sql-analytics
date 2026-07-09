@@ -1,5 +1,6 @@
 # Raw data - too large for git; download link in README
 data/*.csv
+docs/*.md
 
 # OS clutter
 .DS_Store
