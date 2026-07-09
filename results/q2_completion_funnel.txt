@@ -1,0 +1,21 @@
+              stage              | learners | pct_of_registered | drop_from_prev_pct 
+---------------------------------+----------+-------------------+--------------------
+ Registered                      |     1938 |             100.0 |                   
+ Engaged (clicked at least once) |     1768 |              91.2 |               -8.8
+ Submitted first assessment      |     1491 |              76.9 |              -15.7
+ Active past midpoint            |     1192 |              61.5 |              -20.1
+ Completed (Pass/Distinction)    |      829 |              42.8 |              -30.5
+(5 rows)
+
+Findings (course DDD, presentation 2013J):
+- Drop-off accelerates through the funnel: -8.8% -> -15.7% -> -20.1% -> -30.5%.
+  There is no single "leak stage" - each stage loses proportionally more than
+  the last.
+- The largest single loss is at the final stage: 30.5% of learners who were
+  still active past the course midpoint never completed. These are the most
+  recoverable losses - months of invested effort, clearly motivated, and
+  identifiable in the data.
+- Compounding effect: no stage looks catastrophic in isolation, yet only
+  42.8% of registrations end in Pass/Distinction (0.91 x 0.84 x 0.80 x 0.70).
+- Sanity check: 42.8% completion for this course is consistent with the 47.2%
+  global Pass+Distinction rate found in the registrations data.

@@ -1,0 +1,20 @@
+           cohort           | cohort_size | m0_pct | m1_pct | m3_pct | m6_pct 
+----------------------------+-------------+--------+--------+--------+--------
+ 1. Early (>4wk before)     |       25089 |   84.4 |   76.5 |   65.6 |   54.0
+ 2. Standard (0-4wk before) |        7223 |   90.3 |   82.0 |   70.3 |   56.2
+ 3. Late (after start)      |         236 |   82.6 |   81.4 |   71.6 |   57.2
+(3 rows)
+
+Findings:
+- Hypothesis NOT supported: late registrants (n=236) retain slightly BETTER
+  at month 6 (57.2%) than early registrants (54.0%, n=25,089). Registration
+  timing is not a meaningful churn predictor in this data.
+- Caveat: the Late cohort is only 0.7% of journeys - too small for strong
+  claims. Self-selection is also plausible (late joiners may be unusually
+  motivated).
+- Most actionable pattern: EARLY registrants have the weakest month-0
+  activation (84.4% vs 90.3% for standard) - motivation may decay between
+  registration and course start, suggesting value in pre-start re-engagement
+  nudges.
+- General retention shape: roughly half of all learners are inactive by
+  month 6 regardless of cohort.

@@ -1,0 +1,40 @@
+ code_module | code_presentation | registered_learners | engaged_learners | pct_engaged | avg_clicks_per_engaged | avg_active_days 
+-------------+-------------------+---------------------+------------------+-------------+------------------------+-----------------
+ AAA         | 2013J             |                 383 |              374 |        97.7 |                  373.0 |            13.7
+ AAA         | 2014J             |                 365 |              350 |        95.9 |                  351.7 |            13.0
+ FFF         | 2013B             |                1614 |             1473 |        91.3 |                  513.2 |            14.4
+ DDD         | 2013B             |                1303 |             1167 |        89.6 |                  273.6 |            13.2
+ EEE         | 2014J             |                1188 |             1053 |        88.6 |                  307.4 |            11.2
+ FFF         | 2013J             |                2283 |             2023 |        88.6 |                  486.6 |            13.8
+ EEE         | 2013J             |                1052 |              925 |        87.9 |                  359.5 |            11.5
+ FFF         | 2014B             |                1500 |             1318 |        87.9 |                  446.0 |            13.0
+ CCC         | 2014J             |                2498 |             2190 |        87.7 |                  280.1 |             9.9
+ DDD         | 2013J             |                1938 |             1698 |        87.6 |                  207.6 |            11.7
+ DDD         | 2014J             |                1803 |             1563 |        86.7 |                  188.7 |            11.6
+ EEE         | 2014B             |                 694 |              602 |        86.7 |                  288.8 |            10.9
+ DDD         | 2014B             |                1228 |             1064 |        86.6 |                  217.0 |            12.2
+ FFF         | 2014J             |                2365 |             2029 |        85.8 |                  473.0 |            13.6
+ GGG         | 2014B             |                 833 |              705 |        84.6 |                   65.0 |             5.2
+ BBB         | 2013B             |                1767 |             1485 |        84.0 |                  206.0 |            10.1
+ CCC         | 2014B             |                1936 |             1621 |        83.7 |                  273.6 |            10.1
+ GGG         | 2014J             |                 749 |              627 |        83.7 |                   88.6 |             6.0
+ BBB         | 2014J             |                2292 |             1857 |        81.0 |                  128.6 |             7.0
+ GGG         | 2013J             |                 952 |              770 |        80.9 |                   57.7 |             4.8
+ BBB         | 2013J             |                2237 |             1763 |        78.8 |                  150.4 |             8.6
+ BBB         | 2014B             |                1613 |             1229 |        76.2 |                  155.2 |             8.5
+(22 rows)
+
+
+Findings:
+- Early engagement (first 28 days) ranges from 76.2% to 97.7% across the 22
+  course presentations.
+- BBB is the weakest module: all four of its presentations sit in the bottom
+  quartile (76-84% engaged), suggesting a structural onboarding problem
+  rather than a one-off bad semester.
+- GGG shows low click intensity (58-89 avg clicks, 5-6 active days vs 200-500
+  clicks elsewhere), but this likely reflects lighter VLE usage in the course
+  design, not disengagement - its engagement rate is mid-table. Metrics are
+  only comparable when course structures are comparable.
+- FFF is the most VLE-intensive module (446-513 avg clicks) with strong
+  engagement, and AAA (smallest cohorts, ~380 learners) has the highest
+  engagement rates (96-98%).

@@ -1,0 +1,47 @@
+ id_student | days_inactive | active_days_last_28 | baseline_days_per_28 | avg_score | risk_score |          risk_band           
+------------+---------------+---------------------+----------------------+-----------+------------+------------------------------
+    2355555 |           125 |                   0 |                  0.9 |      38.0 |          9 | CRITICAL - contact this week
+     607231 |           125 |                   0 |                  0.6 |      29.0 |          9 | CRITICAL - contact this week
+     108789 |           123 |                   0 |                  1.7 |      27.0 |          9 | CRITICAL - contact this week
+     428321 |           121 |                   0 |                  0.7 |      24.0 |          9 | CRITICAL - contact this week
+     546809 |           117 |                   0 |                  1.3 |      20.0 |          9 | CRITICAL - contact this week
+     497809 |           116 |                   0 |                  1.9 |      26.0 |          9 | CRITICAL - contact this week
+      42818 |           113 |                   0 |                  2.4 |      39.0 |          9 | CRITICAL - contact this week
+     599741 |           110 |                   0 |                  2.1 |      33.0 |          9 | CRITICAL - contact this week
+     572751 |           105 |                   0 |                  1.7 |      28.0 |          9 | CRITICAL - contact this week
+     601310 |           105 |                   0 |                  1.5 |      27.0 |          9 | CRITICAL - contact this week
+     605313 |           105 |                   0 |                  3.9 |      37.0 |          9 | CRITICAL - contact this week
+     561272 |           102 |                   0 |                  1.5 |      24.0 |          9 | CRITICAL - contact this week
+     574627 |           101 |                   0 |                  1.3 |      39.0 |          9 | CRITICAL - contact this week
+    2588379 |           100 |                   0 |                  1.3 |      26.0 |          9 | CRITICAL - contact this week
+     499392 |            99 |                   0 |                  3.7 |      37.0 |          9 | CRITICAL - contact this week
+     363990 |            98 |                   0 |                  1.7 |      29.0 |          9 | CRITICAL - contact this week
+     592284 |            95 |                   0 |                  2.8 |       0.0 |          9 | CRITICAL - contact this week
+     139843 |            90 |                   0 |                  2.4 |      24.0 |          9 | CRITICAL - contact this week
+     579112 |            63 |                   0 |                  3.5 |      28.7 |          9 | CRITICAL - contact this week
+     597726 |            54 |                   0 |                  1.9 |      12.5 |          9 | CRITICAL - contact this week
+     339924 |            46 |                   0 |                  5.4 |      38.7 |          9 | CRITICAL - contact this week
+     444847 |            46 |                   0 |                  1.7 |      38.0 |          9 | CRITICAL - contact this week
+     590402 |            43 |                   0 |                  1.9 |      17.0 |          9 | CRITICAL - contact this week
+     307932 |            34 |                   0 |                  1.3 |      19.0 |          9 | CRITICAL - contact this week
+      35859 |           999 |                   0 |                    0 |           |          8 | CRITICAL - contact this week
+(25 rows)
+
+Findings (as of day 150, DDD 2013J):
+- The top 24 learners all score the maximum 9/9: typically 1-4 months of
+  silence, zero active days in the last 28, and failing average scores
+  (12-39 vs the 40 pass threshold). Each signal independently confirms
+  the others.
+- Two distinct at-risk profiles share the same score: "never launched"
+  learners (baseline ~1-2 days/month, disengaged almost immediately after
+  one weak assessment) and "crashed regulars" (e.g., learner 339924:
+  baseline 5.4 days/month before collapsing). A v2 scorer should separate
+  these bands, as the interventions differ - onboarding recovery vs
+  re-engagement outreach.
+- One learner (35859) scores 8 with NULL avg_score and days_inactive 999:
+  enrolled, never clicked, never submitted - a "zombie enrolment" only
+  visible because COALESCE sentinels kept them in the result rather than
+  letting NULLs drop them.
+- Limitation: all thresholds (21 days, 50% of baseline, score<40) are
+  domain-judgment v1 choices, not fitted parameters. Q5 validates whether
+  the resulting bands actually predict outcomes.

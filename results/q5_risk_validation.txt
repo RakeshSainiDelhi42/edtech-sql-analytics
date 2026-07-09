@@ -1,0 +1,19 @@
+     risk_band     | learners | pct_bad_outcome | pct_withdrawn | pct_passed 
+-------------------+----------+-----------------+---------------+------------
+ 1. CRITICAL (7-9) |      139 |           100.0 |          13.7 |        0.0
+ 2. HIGH (5-6)     |      133 |            90.2 |          19.5 |        9.8
+ 3. WATCH (3-4)    |       93 |            71.0 |          34.4 |       29.0
+ 4. HEALTHY (0-2)  |     1030 |            23.4 |           6.2 |       76.6
+(4 rows)
+
+Findings:
+- The risk score validates strongly: bad-outcome rate climbs monotonically
+  from 23.4% (HEALTHY) to 100% (CRITICAL). All 139 CRITICAL learners
+  failed or withdrew; 76.6% of HEALTHY learners passed.
+- Failure modes differ by band: CRITICAL learners mostly fail without
+  formally withdrawing (13.7% withdrawn), while WATCH learners have the
+  highest withdrawal rate (34.4%) - suggesting different interventions
+  per band.
+- Caveats: validated on a single presentation (DDD 2013J, n=1,395);
+  thresholds are v1 domain judgments. Next step: apply the frozen scorer
+  to a held-out presentation (e.g., DDD 2014J) to test generalization.

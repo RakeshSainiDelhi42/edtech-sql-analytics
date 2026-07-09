@@ -1,0 +1,6 @@
+# Raw data - too large for git; download link in README
+data/*.csv
+
+# OS clutter
+.DS_Store
+Thumbs.db
