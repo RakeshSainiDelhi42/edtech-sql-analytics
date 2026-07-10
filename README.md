@@ -107,21 +107,3 @@ psql -U postgres -d oulad -f schema/02_load_data.sql
 psql -U postgres -d oulad -f queries/q1_early_engagement.sql
 ````
 
-## Limitations & Next Steps
-
-- Risk score validated on one presentation (DDD 2013J); next step is applying
-  the frozen scorer to a held-out presentation (DDD 2014J) to test
-  generalization.
-- Scoring thresholds are v1 domain judgments, not fitted parameters; a
-  logistic regression on the same three signals is the natural upgrade.
-- Q4/Q5 share a 5-CTE pipeline that should be refactored into a VIEW.
-- Click counts are not comparable across modules with different VLE designs
-  (see module GGG in Q1) — intensity metrics need per-module normalization.
-````
-````
-
-**One fix before you preview:** the very last line of the block above ends with a stray ``` ``` `` — if after pasting you see an extra ``` ``` `` at the very bottom of the file after "normalization.", delete that last line. (Artifact of nesting code blocks.)
-
-Then **Ctrl+Shift+V** to preview and check: ERD image displays, the two tables render as tables, the links in the questions table are clickable, no `<placeholder>` text anywhere.
-
-The repo is now complete: schema, loader, 5 queries, 5 results files with findings, ERD, README. Last step is version control — git init, commit, and push to GitHub. Ready?
